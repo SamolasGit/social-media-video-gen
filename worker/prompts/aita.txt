@@ -1,0 +1,11 @@
+Generate an original "Am I The Asshole?" story.
+
+Situation:
+{theme}
+
+Extra requirements:
+{guide}
+
+Make both sides understandable.
+
+Don't immediately reveal who is right.

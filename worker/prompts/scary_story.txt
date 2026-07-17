@@ -1,0 +1,11 @@
+Generate an original scary story.
+
+Main theme:
+{theme}
+
+Extra requirements:
+{guide}
+
+The story should slowly build suspense.
+
+End with an unexpected twist.

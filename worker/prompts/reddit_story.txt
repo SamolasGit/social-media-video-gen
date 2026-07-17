@@ -1,0 +1,13 @@
+Write an ORIGINAL Reddit story.
+
+Theme:
+{theme}
+
+Extra requirements:
+{guide}
+
+The story must feel believable.
+
+Never mention Reddit.
+
+Make it completely original.
