@@ -11,8 +11,6 @@ from functions.prompt_loader import (
     load_prompt,
     load_instruction,
 )
-from styles.subtitles_styles import SubtitleStyle
-
 TMP_DIR = Path("tmp")
 OUTPUT_DIR = Path("output")
 
@@ -39,7 +37,8 @@ def generate_video(data, job_id: str):
     script = generate_script(
         model="gpt-4.1-mini",
         instructions=instructions,
-        input_text=prompt
+        input_text=prompt,
+        language=data["language"],
     )
 
     generate_tts(
@@ -49,20 +48,23 @@ def generate_video(data, job_id: str):
     )
 
     transcript = transcribe_audio(
-        str(audio_file)
+        str(audio_file),
+        language=data["language"],
     )
+
+    if not transcript.words:
+        raise RuntimeError("Whisper did not return word timestamps.")
 
     generate_ass(
         words=transcript.words,
         output_file=str(subtitles_file),
-        style=SubtitleStyle(data["subtitle_style"])
+        style=data["subtitle_style"],
     )
-
     render_video(
-        video_path=data["background_video"],
+        data=data,
         audio_path=str(audio_file),
         subtitles_path=str(subtitles_file),
-        output_path=str(output_file)
+        output_path=str(output_file),
     )
 
     return output_file

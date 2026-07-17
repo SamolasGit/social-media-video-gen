@@ -1,20 +1,23 @@
 from openai.types.audio import TranscriptionWord
-from styles.subtitles_styles import SubtitleStyle, load_style
+from styles.subtitles_styles import load_style
 from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
 
 client = OpenAI()
-def transcribe_audio(audio_file: str):
+def transcribe_audio(
+    audio_file: str,
+    language: str = "en",
+):
     with open(audio_file, "rb") as f:
         return client.audio.transcriptions.create(
             model="whisper-1",
             file=f,
+            language=language,
             response_format="verbose_json",
             timestamp_granularities=["word"],
         )
-
 def ass_timestamp(seconds: float) -> str:
     h = int(seconds // 3600)
     m = int((seconds % 3600) // 60)
@@ -27,7 +30,7 @@ def ass_timestamp(seconds: float) -> str:
 def generate_ass(
     words: list[TranscriptionWord],
     output_file: str,
-    style: SubtitleStyle = SubtitleStyle.TIKTOK,
+    style: str = "tiktok",
     speed: float = 1.0,
 ):
     style_text = load_style(style)

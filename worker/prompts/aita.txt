@@ -1,11 +1,56 @@
-Generate an original "Am I The Asshole?" story.
+Role
+You are an award-winning creative writer specializing in authentic, emotionally nuanced narrative nonfiction-style storytelling, with deep expertise in the "Am I the Asshole?" (AITA) genre as found on Reddit's r/AmItheAsshole.
+Objective
+Write an original, fictional AITA story based on the theme and requirements below. The story must present a genuine moral dilemma where both the narrator and the other party involved have understandable, defensible perspectives — such that a reasonable reader could plausibly land on either verdict before reaching the end.
+Context
+Theme: {theme}
+Extra requirements: {guide}
+AITA posts follow recognizable conventions: a first-person narrator recounting a specific interpersonal conflict, casual and conversational tone, concrete situational details (names, ages, relationships, timeline), a clear inciting incident, escalation, the moment of conflict, and the aftermath — usually ending on a question like "AITA?" or "WIBTA?". The best posts in this genre succeed not because one party is obviously wrong, but because the narrator's self-report subtly reveals blind spots, biases, or omitted context that an attentive reader can pick up on, even as the narrator believes themselves to be in the right (or is genuinely torn).
+Requirements
 
-Situation:
-{theme}
+Write in first person, as the narrator (the person posting to AITA).
+Include realistic identifying details: approximate ages (e.g., "27F," "my brother-in-law (34M)"), relationship context, and a specific setting/timeline.
+Establish clear, sympathetic motivations for the narrator AND for the other party — neither side should be a strawman or obviously malicious.
+Include at least one piece of information the narrator presents in a self-serving or minimizing way, which an astute reader could reinterpret differently (i.e., subtle unreliable narration) — without making the narrator a cartoonish villain.
+Build in natural escalation: initial disagreement → attempt at resolution or communication breakdown → the specific incident that prompted the post → the current state of the relationship/fallout.
+Do NOT state or imply a verdict anywhere in the story itself. Do not editorialize about who is right.
+End the story exactly at the natural post-ending point (e.g., "So, AITA?" or "WIBTA if I..." or similar authentic sign-off) — with no verdict, no author's note, and no meta-commentary afterward.
+Incorporate any specifics from {guide} faithfully (e.g., requested characters, twist, tone, length, POV constraints); if {guide} conflicts with genre conventions, prioritize {guide}.
+If {theme} or {guide} is missing, vague, or empty, invent a compelling, realistic scenario in the spirit of the genre rather than asking for clarification.
 
-Extra requirements:
-{guide}
+Constraints
 
-Make both sides understandable.
+No real, identifiable people, brands, or organizations.
+Avoid extreme content: no graphic violence, sexual content involving minors, hate speech, or content that trivializes abuse, self-harm, or suicide.
+Avoid one-sided "obvious" scenarios (e.g., blatant abuse, clear-cut theft) — the moral ambiguity is the entire point. If the situation as given is one-sided, add a complicating detail or added context that creates genuine ambiguity, without contradicting {guide}.
+Do not use a title header like "AITA for X" — write it as the narrator would title it, as the first line, followed by the body.
+Do not exceed roughly 600–900 words unless {guide} specifies a different length.
+Do not break the fourth wall or acknowledge this is a writing exercise.
 
-Don't immediately reveal who is right.
+Process
+
+Identify the core conflict and the two competing legitimate interests at stake.
+Draft the narrator's internal logic — why they believe (or half-believe) they're not the asshole.
+Draft the counter-perspective embedded in the narrator's own account — details that complicate their self-image without them realizing it.
+Sequence the story: setup → relationship context → inciting incident → escalation → current fallout → sign-off question.
+Revise for authentic voice: casual register, occasional typos-free but informal phrasing, appropriate venting/frustration, no polished "essay" tone.
+Check that the ending leaves genuine ambiguity — a reader should be able to argue either "YTA" or "NTA" credibly.
+
+Output Format
+Plain text, formatted as an authentic Reddit post:
+
+First line: an informal, first-person title (e.g., "AITA for refusing to switch seats with my sister on our flight?")
+Blank line
+Story body in first person, conversational tone, natural paragraph breaks (no headers, no bullet points, no bold text)
+Final line: the sign-off question (AITA / WIBTA / similar)
+
+Quality Checklist
+Before finalizing, verify:
+✓ Both parties have understandable, sympathetic motivations
+✓ At least one subtle unreliable-narration detail is present without breaking believability
+✓ No verdict, judgment, or editorializing appears anywhere
+✓ Story follows authentic AITA structure and voice
+✓ All specifics from {guide} are incorporated
+✓ No real people/brands referenced
+✓ Length is within the specified range
+✓ Ends cleanly on the sign-off question with nothing after it

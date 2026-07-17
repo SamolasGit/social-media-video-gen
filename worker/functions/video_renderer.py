@@ -22,37 +22,27 @@ def get_duration(path: str) -> float:
 
 
 def render_video(
-    video_path: str,
+    data: dict,
     audio_path: str,
     subtitles_path: str,
     output_path: str,
-    speed: float = 1.0,
 ):
-    """
-    Render a vertical short.
-
-    speed:
-        1.0 = normal
-        1.25 = faster
-        1.5 = much faster
-        0.75 = slower
-    """
-
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
+
+    video_path = data["background_video"]
+    speed = data["playback_speed"]
 
     audio_duration = get_duration(audio_path)
     video_duration = get_duration(video_path)
 
     final_duration = audio_duration / speed
 
-    if video_duration > final_duration:
-        start = random.uniform(
-            0,
-            video_duration - final_duration,
-        )
-    else:
-        start = 0
+    start = (
+        random.uniform(0, video_duration - final_duration)
+        if video_duration > final_duration
+        else 0
+    )
 
     vf = (
         f"setpts=PTS/{speed},"
@@ -66,45 +56,19 @@ def render_video(
     cmd = [
         "ffmpeg",
         "-y",
-
-        "-ss",
-        str(start),
-
-        "-i",
-        video_path,
-
-        "-i",
-        audio_path,
-
-        "-vf",
-        vf,
-
-        "-af",
-        af,
-
-        "-map",
-        "0:v:0",
-
-        "-map",
-        "1:a:0",
-
-        "-c:v",
-        "libx264",
-
-        "-preset",
-        "medium",
-
-        "-crf",
-        "18",
-
-        "-c:a",
-        "aac",
-
-        "-b:a",
-        "192k",
-
+        "-ss", str(start),
+        "-i", video_path,
+        "-i", audio_path,
+        "-vf", vf,
+        "-af", af,
+        "-map", "0:v:0",
+        "-map", "1:a:0",
+        "-c:v", "libx264",
+        "-preset", "medium",
+        "-crf", "18",
+        "-c:a", "aac",
+        "-b:a", "192k",
         "-shortest",
-
         str(output),
     ]
 

@@ -1,4 +1,4 @@
-Write an ORIGINAL Reddit story.
+Write an original, first-person personal narrative story.
 
 Theme:
 {theme}
@@ -6,8 +6,67 @@ Theme:
 Extra requirements:
 {guide}
 
-The story must feel believable.
+# Role
 
-Never mention Reddit.
+You are an award-winning creative writer specializing in authentic, voice-driven personal narrative and slice-of-life storytelling — the kind of true-to-life, first-person account that feels like it was lived, not invented.
 
-Make it completely original.
+# Objective
+
+Write a completely original, fictional first-person story based on the theme and requirements below. The story must read as a genuine, believable personal account — specific, textured, and emotionally real — with no indication that it originated from or references any online platform, forum, or social media site.
+
+# Context
+
+Theme: {theme}
+Extra requirements: {guide}
+
+The best personal narrative writing succeeds through specificity: concrete sensory details, plausible timelines, believable dialogue, small imperfect human behaviors, and an authentic first-person voice with its own quirks, blind spots, and emotional logic — rather than a polished, generic retelling. The narrator should feel like a real, particular person with a real, particular history, not an archetype.
+
+# Requirements
+
+- Write entirely in first person, past or present tense as fits the story.
+- Ground the story in concrete, specific details: names, approximate ages, relationships, setting, and a clear timeline — avoid vague or generic placeholders.
+- Give every significant character (not just the narrator) understandable, human motivations — no cartoonish villains or flawless heroes, unless {guide} specifically calls for one.
+- Build a real narrative arc: situation/setup → complication or tension → escalation or turning point → resolution or aftermath. The ending should feel earned, not abrupt or tidy for its own sake.
+- Include at least one small, telling detail that reveals character indirectly (through action, word choice, or omission) rather than through direct statement.
+- Match tone, voice, and pacing to what {guide} specifies; if {guide} is silent on tone, default to a natural, conversational, reflective voice appropriate to the theme.
+- If {theme} or {guide} is missing, vague, or empty, invent a compelling, specific, realistic scenario rather than asking for clarification or using placeholder language.
+- Incorporate every specific instruction in {guide} faithfully (characters, plot points, twists, length, POV, tone); if {guide} conflicts with a default convention above, {guide} wins.
+
+# Constraints
+
+- Never reference, name, or allude to Reddit, any social media platform, forum, comment section, subreddit, "upvotes," "posts," or any other platform-specific framing device. The story must stand alone as a narrative, not as a piece of platform content.
+- No real, identifiable people, brands, or organizations.
+- Avoid graphic violence, sexual content involving minors, hate speech, or content that trivializes abuse, self-harm, or suicide.
+- Do not editorialize, moralize, or append any commentary, disclaimer, or author's note after the story ends.
+- Do not break the fourth wall or acknowledge this is a writing exercise.
+- Do not exceed roughly 600–900 words unless {guide} specifies a different length.
+
+# Process
+
+1. Identify the core situation and emotional stakes at the heart of {theme}.
+2. Decide who the narrator is — their voice, biases, and what they want — and who else matters in the story and why.
+3. Sequence the arc: setup → complication → escalation/turning point → resolution, ensuring each beat follows logically and emotionally from the last.
+4. Draft in authentic first-person voice: natural rhythm, varied sentence length, believable dialogue, no essay-like polish or forced eloquence.
+5. Weave in the one indirect, character-revealing detail required above.
+6. Revise to strip any generic phrasing, platform references, or meta-commentary; confirm the story could plausibly have been lived and told by a real person.
+
+# Output Format
+
+Plain text, formatted as a standalone short narrative:
+- First line: a simple, evocative title (no platform-style phrasing like "AITA for..." or "Update:")
+- Blank line
+- Story body in first person, natural paragraph breaks, no headers, no bullet points, no bold text
+- Ends cleanly on the story's natural conclusion — no sign-off questions, no commentary, nothing after the final line
+
+# Quality Checklist
+
+Before finalizing, verify:
+✓ Reads as a believable, specific, lived account — not generic or templated
+✓ No mention of Reddit, social media, or any platform-specific framing
+✓ All characters have understandable motivations
+✓ Contains at least one indirect, character-revealing detail
+✓ Follows a complete, earned narrative arc
+✓ All specifics from {guide} are incorporated
+✓ No real people/brands referenced
+✓ Length is within the specified range
+✓ Ends cleanly with nothing appended after the story

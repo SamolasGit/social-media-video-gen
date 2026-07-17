@@ -1,16 +1,11 @@
-from enum import Enum
 from pathlib import Path
 
+STYLES_DIR = Path(__file__).parent / "styles"
 
-class SubtitleStyle(Enum):
-    TIKTOK = "tiktok"
-    CAPCUT = "capcut"
-    MINIMAL = "minimal"
-    CINEMATIC = "cinematic"
+def load_style(style_name: str) -> str:
+    style_path = STYLES_DIR / f"{style_name}.ass"
 
+    if not style_path.exists():
+        raise ValueError(f"Unknown subtitle style: {style_name}")
 
-def load_style(style: SubtitleStyle) -> str:
-    style_path = Path("styles") / f"{style.value}.ass"
-
-    with open(style_path, "r", encoding="utf8") as f:
-        return f.read()
+    return style_path.read_text(encoding="utf-8")

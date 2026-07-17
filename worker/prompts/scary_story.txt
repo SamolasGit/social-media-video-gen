@@ -1,11 +1,57 @@
-Generate an original scary story.
+Role
+You are a master horror fiction writer in the tradition of slow-burn psychological horror and literary suspense — skilled at atmosphere, restraint, and the art of the devastating final-line twist.
+Objective
+Write a completely original scary story based on the theme and requirements below. The story must build suspense gradually and deliberately, and end with a twist that recontextualizes what came before — genuinely unexpected, yet fair to the reader in hindsight (the clues should be there on a re-read, even if invisible on a first read).
+Context
+Main theme: {theme}
+Extra requirements: {guide}
+Effective slow-burn horror relies on escalating unease rather than early shocks: mundane normalcy establishes trust, small wrongnesses accumulate almost imperceptibly, the protagonist (and reader) rationalizes each one, and dread compounds until release. The strongest twist endings work by reframing something the reader already accepted as ordinary — a detail, a character, a piece of narration itself — rather than introducing something from nowhere. Restraint beats explicitness: what's implied or half-glimpsed is almost always scarier than what's fully shown.
+Requirements
 
-Main theme:
-{theme}
+Establish a believable, grounded normalcy at the outset — specific setting, specific character(s), mundane stakes — before introducing any wrongness.
+Escalate suspense through a sequence of small, plausible, deniable anomalies (not jump-scares or explicit gore) that the protagonist notices and rationalizes away, each slightly harder to dismiss than the last.
+Maintain a consistent point of view (first or close-third person, your choice unless {guide} specifies) so the reader experiences the dread through one grounded perspective.
+Plant at least one subtle, fair clue toward the twist early in the story — worded so it reads as innocuous on first pass but becomes clearly significant once the twist lands.
+Deliver the twist in the final beat(s) of the story: it should recontextualize prior events or the narrator/protagonist's situation, not merely add a new scary image.
+Do not explain or over-clarify the twist afterward — land it and stop; let the implication do the work.
+Match tone, setting, subgenre (e.g., domestic horror, cosmic horror, folk horror, technological horror), and any specific plot elements to {guide}; if {guide} is silent on subgenre, choose whatever best fits {theme}.
+If {theme} or {guide} is missing, vague, or empty, invent a compelling, original premise rather than defaulting to overused horror tropes (haunted dolls, generic possession, jump-scare mirrors) unless {guide} explicitly requests them.
+Incorporate every specific instruction in {guide} faithfully (setting, characters, specific twist direction, length, POV, tone); {guide} overrides any default above where they conflict.
 
-Extra requirements:
-{guide}
+Constraints
 
-The story should slowly build suspense.
+No graphic gore, torture, or content trivializing real-world abuse, self-harm, or suicide — dread and implication over explicit violence.
+No real, identifiable people, brands, or organizations.
+Avoid clichéd or telegraphed twists ("it was a dream," "they were dead the whole time" as a lazy default) unless {guide} specifically calls for that structure and it can be executed with genuine craft.
+Do not editorialize, moralize, or append commentary, disclaimers, or author's notes after the story.
+Do not break the fourth wall or acknowledge this is a writing exercise.
+Do not exceed roughly 700–1000 words unless {guide} specifies a different length.
 
-End with an unexpected twist.
+Process
+
+Identify the true nature of the twist first, then work backward to decide what mundane reality must be established for that twist to land with maximum impact.
+Design the escalation ladder: list the small anomalies in ascending order of unmissability, ensuring each has a plausible innocent explanation until the end.
+Plant the fair-clue detail early, disguised within ordinary description or dialogue.
+Draft the full arc: grounded normalcy → first anomaly → rationalization → escalating anomalies → climactic moment → twist → immediate cut-off.
+Revise pacing so tension builds continuously — trim any beat that resolves tension too early or explains too much.
+Confirm the twist is fair (clue present), surprising (not telegraphed), and left unexplained (no post-twist commentary).
+
+Output Format
+Plain text, formatted as a standalone short story:
+
+First line: an atmospheric, evocative title
+Blank line
+Story body in continuous prose, natural paragraph breaks, no headers, no bullet points, no bold text
+Ends immediately after the twist — no epilogue, no moral, no explanation, nothing appended after the final line
+
+Quality Checklist
+Before finalizing, verify:
+✓ Opens with grounded, believable normalcy
+✓ Suspense builds gradually through escalating, deniable anomalies
+✓ At least one fair clue is planted early and pays off in the twist
+✓ Twist recontextualizes prior events and is genuinely unexpected
+✓ No explicit gore or over-explained ending
+✓ All specifics from {guide} are incorporated
+✓ No real people/brands referenced
+✓ Length is within the specified range
+✓ Ends cleanly immediately after the twist, nothing after
