@@ -1,4 +1,4 @@
-from openai.types.audio import TranscriptionWord
+﻿from openai.types.audio import TranscriptionWord
 from styles.subtitles_styles import load_style
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -6,6 +6,7 @@ from openai import OpenAI
 load_dotenv()
 
 client = OpenAI()
+
 def transcribe_audio(
     audio_file: str,
     language: str = "en",
@@ -18,6 +19,7 @@ def transcribe_audio(
             response_format="verbose_json",
             timestamp_granularities=["word"],
         )
+
 def ass_timestamp(seconds: float) -> str:
     h = int(seconds // 3600)
     m = int((seconds % 3600) // 60)
@@ -49,26 +51,16 @@ def generate_ass(
             "Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text\n"
         )
 
-        sentence = []
+        chunk: list[TranscriptionWord] = []
+        max_words = 3
 
-        for word in words:
+        def flush_chunk():
+            if not chunk:
+                return
 
-            sentence.append(word.word)
-
-            visible = sentence[-4:]
-
-            parts = visible.copy()
-
-            parts[-1] = (
-                r"{\c&H00FFFF&\fscx70\fscy70\t(0,120,\fscx100\fscy100)}"
-                + parts[-1]
-                + r"{\c&HFFFFFF&}"
-            )
-
-            text = " ".join(parts)
-
-            start = word.start / speed
-            end = word.end / speed
+            start = chunk[0].start / speed
+            end = chunk[-1].end / speed
+            text = " ".join(word.word for word in chunk)
 
             f.write(
                 f"Dialogue: 0,"
@@ -76,3 +68,11 @@ def generate_ass(
                 f"{ass_timestamp(end)},"
                 f"Default,,0,0,0,,{text}\n"
             )
+            chunk.clear()
+
+        for word in words:
+            chunk.append(word)
+            if len(chunk) >= max_words:
+                flush_chunk()
+
+        flush_chunk()

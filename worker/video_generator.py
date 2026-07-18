@@ -25,31 +25,31 @@ def generate_video(data, job_id: str):
     output_file = OUTPUT_DIR / f"{job_id}.mp4"
 
     prompt = load_prompt(
-        data["prompt"],
-        theme=data["theme"],
-        guide=data["guide"]
+        data.get("prompt", "reddit_story"),
+        theme=data.get("theme", ""),
+        guide=data.get("guide", "")
     )
 
     instructions = load_instruction(
-        data["instruction"]
+        data.get("instruction", "tiktok")
     )
 
     script = generate_script(
         model="gpt-4.1-mini",
         instructions=instructions,
         input_text=prompt,
-        language=data["language"],
+        language=data.get("language", "en"),
     )
 
     generate_tts(
         text=script,
         output_file=str(audio_file),
-        voice=data["voice"]
+        voice=data.get("voice", "alloy")
     )
 
     transcript = transcribe_audio(
         str(audio_file),
-        language=data["language"],
+        language=data.get("language", "en"),
     )
 
     if not transcript.words:
@@ -58,7 +58,7 @@ def generate_video(data, job_id: str):
     generate_ass(
         words=transcript.words,
         output_file=str(subtitles_file),
-        style=data["subtitle_style"],
+        style=data.get("subtitle_style", "tiktok"),
     )
     render_video(
         data=data,

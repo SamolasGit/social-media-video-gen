@@ -32,9 +32,10 @@ class VideoRequest(BaseModel):
     voice: str = "alloy"
     language: str = "en"
     subtitle_style: str = "tiktok"
-    music : str = "assets/audio/lofi-1.mp3"
+    music : str = "assets/sounds/lofi-1.mp3"
     playback_speed: float = 1.0
     background_video: str = "assets/videos/minecraft-1.mp4"
+    volume: float = 1.0
 
 
 # -----------------------------

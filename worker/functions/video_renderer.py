@@ -30,8 +30,15 @@ def render_video(
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    video_path = data["background_video"]
-    speed = data["playback_speed"]
+    video_path = data.get("background_video", "assets/videos/minecraft-1.mp4")
+    speed = data.get("playback_speed", 1.0)
+    music_path = data.get("music")
+    music_volume = float(data.get("volume", 1.0))
+
+    if music_path is not None:
+        music_file = Path(music_path)
+        if not music_file.exists():
+            raise FileNotFoundError(f"Music file not found: {music_path}")
 
     audio_duration = get_duration(audio_path)
     video_duration = get_duration(video_path)
@@ -51,26 +58,50 @@ def render_video(
         f"ass='{subtitles_path}'"
     )
 
-    af = f"atempo={speed}"
-
     cmd = [
         "ffmpeg",
         "-y",
         "-ss", str(start),
         "-i", video_path,
         "-i", audio_path,
-        "-vf", vf,
-        "-af", af,
-        "-map", "0:v:0",
-        "-map", "1:a:0",
-        "-c:v", "libx264",
-        "-preset", "medium",
-        "-crf", "18",
-        "-c:a", "aac",
-        "-b:a", "192k",
-        "-shortest",
-        str(output),
     ]
+
+    filter_complex = None
+    audio_map = ["-map", "1:a:0"]
+
+    if music_path:
+        cmd.extend(["-i", music_path])
+        filter_complex = (
+            f"[1:a]atempo={speed}[speech];"
+            f"[2:a]atempo={speed},volume={music_volume}[music];"
+            "[speech][music]amix=inputs=2:duration=shortest:dropout_transition=2[a]"
+        )
+        audio_map = ["-map", "[a]"]
+    else:
+        cmd.extend(["-af", f"atempo={speed}"])
+
+    cmd.extend(
+        [
+            "-vf", vf,
+            "-map", "0:v:0",
+        ]
+    )
+
+    if filter_complex:
+        cmd.extend(["-filter_complex", filter_complex])
+
+    cmd.extend(
+        [
+            *audio_map,
+            "-c:v", "libx264",
+            "-preset", "medium",
+            "-crf", "18",
+            "-c:a", "aac",
+            "-b:a", "192k",
+            "-shortest",
+            str(output),
+        ]
+    )
 
     subprocess.run(cmd, check=True)
 
